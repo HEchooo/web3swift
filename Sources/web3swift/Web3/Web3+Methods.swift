@@ -17,6 +17,10 @@ public enum JSONRPCmethod: String, Encodable {
     case getTxPoolContent = "txpool_content"
     case getTxPoolInspect = "txpool_inspect"
     case estimateGas = "eth_estimateGas"
+    case estimateFee = "zks_estimateFee"
+    case chainId = "eth_chainId"
+    case getL1toL2GasLimit = "zks_estimateGasL1ToL2"
+    case getMainContract = "zks_getMainContract"
 
     // 1 parameter in call
     case sendRawTransaction = "eth_sendRawTransaction"
@@ -48,7 +52,9 @@ public enum JSONRPCmethod: String, Encodable {
                 .getAccounts,
                 .getTxPoolStatus,
                 .getTxPoolContent,
-                .getTxPoolInspect:
+                .getTxPoolInspect,
+                .chainId,
+                .getMainContract:
             return 0
         case .sendRawTransaction,
                 .sendTransaction,
@@ -58,7 +64,9 @@ public enum JSONRPCmethod: String, Encodable {
                 .unlockAccount,
                 .createAccount,
                 .getLogs,
-                .estimateGas:
+                .estimateGas,
+                .estimateFee,
+                .getL1toL2GasLimit:
             return 1
         case .call,
                 .getTransactionCount,
