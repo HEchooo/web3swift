@@ -21,6 +21,7 @@ public enum JSONRPCmethod: String, Encodable {
     case zkEraChainId = "eth_chainId"
     case zkEraGetL1toL2GasLimit = "zks_estimateGasL1ToL2"
     case zkEraGetMainContract = "zks_getMainContract"
+    case zkEraGetBridgeContracts = "zks_getBridgeContracts"
 
     // 1 parameter in call
     case sendRawTransaction = "eth_sendRawTransaction"
@@ -54,7 +55,8 @@ public enum JSONRPCmethod: String, Encodable {
                 .getTxPoolContent,
                 .getTxPoolInspect,
                 .zkEraChainId,
-                .zkEraGetMainContract:
+                .zkEraGetMainContract,
+                .zkEraGetBridgeContracts:
             return 0
         case .sendRawTransaction,
                 .sendTransaction,
