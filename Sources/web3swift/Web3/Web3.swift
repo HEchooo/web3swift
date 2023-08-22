@@ -17,6 +17,7 @@ public enum Web3Error: Error {
     case keystoreError(err: AbstractKeystoreError)
     case generalError(err: Error)
     case unknownError
+    case transactionReceiptNoData
 
     public var errorDescription: String {
         switch self {
@@ -41,6 +42,8 @@ public enum Web3Error: Error {
             return err.localizedDescription
         case .unknownError:
             return "Unknown Error"
+        case .transactionReceiptNoData:
+            return "TransactionReceipt data is nil"
         }
     }
 }

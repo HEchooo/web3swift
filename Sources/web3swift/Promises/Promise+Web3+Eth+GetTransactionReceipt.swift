@@ -23,7 +23,7 @@ extension web3.Eth {
                 if response.error != nil {
                     throw Web3Error.nodeError(desc: response.error!.message)
                 }
-                throw Web3Error.nodeError(desc: "Invalid value from Ethereum node")
+                throw Web3Error.transactionReceiptNoData
             }
             return value
         }
