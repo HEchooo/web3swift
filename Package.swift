@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.3.0")),
         .package(url: "https://github.com/mxcl/PromiseKit.git", .upToNextMinor(from: "6.16.2")),
-        .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMinor(from: "4.0.4")),
+        .package(url: "https://github.com/daltoniam/Starscream.git", .exact( "4.0.4")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.5.1")),
         .package(url: "https://github.com/GigaBitcoin/secp256k1.swift.git", from: "0.10.0")
     ],
